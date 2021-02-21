@@ -50,7 +50,12 @@ export default class Board extends Component<Record<string, never>, BoardState> 
     const { title } = this.state;
     return (
       <section className="board">
-        <h1 className="board__title">{title}</h1>
+        <header className="board__header">
+          <a href="/" className="board__home-link">
+            Домой
+          </a>
+          <h1 className="board__title">{title}</h1>
+        </header>
         <div className="board__main">
           {this.makeLists()}
           <button className="board__btn">Добавить список</button>

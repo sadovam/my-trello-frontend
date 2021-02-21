@@ -1,22 +1,39 @@
 .board {
   overflow: overlay;
   
-  .board__title {
-    text-align: left;
-    padding: 10px 20px;
+  .board__header {
+    padding: 7px 10px;
     margin: 0;
     color: #204b2e;
     background-color: burlywood;
   }
+  
+  .board__home-link {
+    display: inline-block;
+    padding: 7px 10px;
+    text-decoration: none;
+    border-radius: 10px;
+    background-color: #204b2e;
+    color:ghostwhite;
+  }
+  
+  .board__title {
+    margin: 0 10px;
+    text-align: left;
+    display: inline-block;
+  }
+  
   .board__main {
     display: flex;
     align-items: self-start;
     justify-content: flex-start;
     padding-top: 10px;
   }
+  
   .board__btn {
     white-space: nowrap;
     padding: 5px 10px;
+    margin-left: 10px;
     font-size: 16px;
     font-weight: bold;
     border-radius: 7px;
