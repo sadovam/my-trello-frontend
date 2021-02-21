@@ -1,18 +1,14 @@
-import React from 'react';
+import React, { Component, ReactElement } from 'react';
 import { IList } from '../../common/interfaces/IList';
-import List from './components/List/List';
-
-interface BoardProps {
-  num?: string;
-}
+import { List } from './components/List/List';
 
 interface BoardState {
   title: string;
   lists: IList[];
 }
 
-export default class Board extends React.Component<BoardProps, BoardState> {
-  constructor(props: BoardProps) {
+export default class Board extends Component<Record<string, never>, BoardState> {
+  constructor(props: Record<string, never>) {
     super(props);
 
     this.state = {
@@ -44,14 +40,19 @@ export default class Board extends React.Component<BoardProps, BoardState> {
     };
   }
 
-  render(): JSX.Element {
-    const { title, lists } = this.state;
-    const listComponents = lists.map((l) => <List id={l.id} title={l.title} cards={l.cards} />);
+  makeLists(): ReactElement[] {
+    const { lists } = this.state;
+    return lists.map((list) => <List {...list} />);
+  }
+
+  render(): ReactElement {
+    const { title } = this.state;
     return (
-      <div>
+      <section>
         <h1>{title}</h1>
-        {listComponents}
-      </div>
+        {this.makeLists()}
+        <button>Додати список</button>
+      </section>
     );
   }
 }

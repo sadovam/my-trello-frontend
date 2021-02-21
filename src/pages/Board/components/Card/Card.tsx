@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { FC, ReactElement } from 'react';
 
-export default function Card(props: { title: string }): JSX.Element {
-  const { title } = props;
-  return <h3>{title}</h3>;
+interface CardProps {
+  title: string;
 }
+
+export const Card: FC<CardProps> = ({ title }): ReactElement => <li>{title}</li>;
