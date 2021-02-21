@@ -1,6 +1,7 @@
 import React, { Component, ReactElement } from 'react';
 import { IList } from '../../common/interfaces/IList';
 import { List } from './components/List/List';
+import './board.scss';
 
 interface BoardState {
   title: string;
@@ -50,8 +51,10 @@ export default class Board extends Component<Record<string, never>, BoardState> 
     return (
       <section className="board">
         <h1 className="board__title">{title}</h1>
-        {this.makeLists()}
-        <button className="board__btn btn">Додати список</button>
+        <div className="board__main">
+          {this.makeLists()}
+          <button className="board__btn">Добавить список</button>
+        </div>
       </section>
     );
   }

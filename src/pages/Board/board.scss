@@ -1,0 +1,26 @@
+.board {
+  overflow: overlay;
+  
+  .board__title {
+    text-align: left;
+    padding: 10px 20px;
+    margin: 0;
+    color: #204b2e;
+    background-color: burlywood;
+  }
+  .board__main {
+    display: flex;
+    align-items: self-start;
+    justify-content: flex-start;
+    padding-top: 10px;
+  }
+  .board__btn {
+    white-space: nowrap;
+    padding: 5px 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 7px;
+    background-color: #204b2e;
+    color:ghostwhite;
+  }
+}
