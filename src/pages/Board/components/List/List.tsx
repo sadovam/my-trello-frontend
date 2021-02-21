@@ -8,9 +8,9 @@ function makeCardList(cards: ICard[]): ReactElement[] {
 }
 
 export const List: FC<IList> = ({ title, cards }): ReactElement => (
-  <section>
-    <h2>{title}</h2>
-    <ul>{makeCardList(cards)}</ul>
-    <button>Додати картку</button>
+  <section className="list">
+    <h2 className="list__title">{title}</h2>
+    <ul className="list__cards">{makeCardList(cards)}</ul>
+    <button className="list__btn btn">Додати картку</button>
   </section>
 );

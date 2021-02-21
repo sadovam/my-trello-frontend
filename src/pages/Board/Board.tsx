@@ -48,10 +48,10 @@ export default class Board extends Component<Record<string, never>, BoardState> 
   render(): ReactElement {
     const { title } = this.state;
     return (
-      <section>
-        <h1>{title}</h1>
+      <section className="board">
+        <h1 className="board__title">{title}</h1>
         {this.makeLists()}
-        <button>Додати список</button>
+        <button className="board__btn btn">Додати список</button>
       </section>
     );
   }
